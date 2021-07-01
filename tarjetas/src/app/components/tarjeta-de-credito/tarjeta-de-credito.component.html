@@ -14,41 +14,41 @@
             <div class="card">
                 <div class="card-body">
                     <h5>Agregar tarjeta</h5>
-                    <form>
+                    <form [formGroup]="form" (ngSubmit)="agregarTarjeta()">
                         <div class="input-group input-group-lg mb-3">
                             <span class="input-group-text" id="basic-addon1">
-                                <i class="far fa-user"></i>
+                                <i class="far fa-user" [class.green-icon]="this.form.get('titular')?.valid" [class.red-icon]="this.form.get('titular')?.invalid && this.form.get('titular')?.touched"></i>
                             </span>
-                            <input type="text" class="form-control" placeholder="Titular">
+                            <input formControlName="titular" type="text" class="form-control" placeholder="Titular">
                         </div>
                         <div class="input-group input-group-lg mb-3">
                             <span class="input-group-text" id="basic-addon1">
-                                <i class="fas fa-credit-card"></i>
+                                <i class="fas fa-credit-card" [class.green-icon]="this.form.get('numeroDeTarjeta')?.valid" [class.red-icon]="this.form.get('numeroDeTarjeta')?.invalid && this.form.get('numeroDeTarjeta')?.touched"></i>
                             </span>
-                            <input type="text" class="form-control" placeholder="Número de tarjeta">
+                            <input formControlName="numeroDeTarjeta" maxlength="16" type="text" class="form-control" placeholder="Número de tarjeta">
                         </div>
 
                         <div class="row">
                             <div class="col-7">
                                 <div class="input-group input-group-lg mb-3">
                                     <span class="input-group-text" id="basic-addon1">
-                                        <i class="fas fa-calendar-alt"></i>
+                                        <i class="fas fa-calendar-alt" [class.green-icon]="this.form.get('fechaDeVencimiento')?.valid" [class.red-icon]="this.form.get('fechaDeVencimiento')?.invalid && this.form.get('fechaDeVencimiento')?.touched"></i>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="MM/AA">
+                                    <input formControlName="fechaDeVencimiento" maxlength="5" type="text" class="form-control" placeholder="MM/AA">
                                 </div>
                             </div>
 
                             <div class="col-5">
                                 <div class="input-group input-group-lg mb-3">
                                     <span class="input-group-text" id="basic-addon1">
-                                        <i class="fas fa-key"></i>
+                                        <i class="fas fa-key" [class.green-icon]="this.form.get('cvv')?.valid" [class.red-icon]="this.form.get('cvv')?.invalid && this.form.get('cvv')?.touched"></i>
                                     </span>
-                                    <input type="password" class="form-control" placeholder="cvv">
+                                    <input formControlName="cvv" maxlength="3" type="password" class="form-control" placeholder="cvv">
                                 </div>
                             </div>
                         </div>
                         <div class="d-grid gap-2">
-                            <button class="btn btn-success btn-lg btn-block" type="submit">
+                            <button [disabled]="this.form.invalid" class="btn btn-success btn-lg btn-block" type="submit">
                                 <i class="fas fa-save"></i>
                                 Guardar
                             </button>
