@@ -64,13 +64,17 @@
                     <h5>Listado de Tarjetas</h5>
                     <table class="table">
                         <tbody>
-                            <tr *ngFor="let tarjeta of listaDeTarjetas">
+                            <tr *ngFor="let tarjeta of listaDeTarjetas let i = index">
                                 <td>{{tarjeta.titular}}</td>
                                 <td>{{tarjeta.numeroDeTarjeta}}</td>
                                 <td>{{tarjeta.fechaDeVencimiento}}</td>
                                 <td>{{tarjeta.cvv}}</td>
                                 <td><i class="far fa-edit text-warning"></i></td>
-                                <td><i class="fas fa-trash-alt text-danger"></i></td>
+                                <td>
+                                    <button (click)="eliminarTarjeta(i)" class="btn btn-default"> 
+                                        <i  class="fas fa-trash-alt text-danger"></i>
+                                    </button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
