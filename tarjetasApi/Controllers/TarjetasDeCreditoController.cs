@@ -23,7 +23,7 @@ namespace tarjetasApi.Controllers{
             {
                 List<TarjetaDeCredito> list;
 
-                list = await _context.TarjetaDeCredito.ToListAsync();
+                list = await _context.TarjetaDeCredito.Where(x=>x.IsActivo == true).ToListAsync();
 
                 return Ok(list);
             }
@@ -34,7 +34,7 @@ namespace tarjetasApi.Controllers{
             }
         }
 
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id){
             try
             {
@@ -84,7 +84,7 @@ namespace tarjetasApi.Controllers{
             }
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id){
             try
             {
