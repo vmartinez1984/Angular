@@ -57,6 +57,8 @@ namespace tarjetasApi.Controllers{
         public async Task<IActionResult> Post(TarjetaDeCredito item){
             try
             {
+                item.IsActivo = true;
+                item.FechaDeRegistro = DateTime.Now;
                 await _context.TarjetaDeCredito.AddAsync(item);
                 await _context.SaveChangesAsync();
 
@@ -73,7 +75,14 @@ namespace tarjetasApi.Controllers{
         public async Task<IActionResult> Put(TarjetaDeCredito item){
             try
             {
-                _context.TarjetaDeCredito.Update(item);
+                TarjetaDeCredito tarjetaDeCredito;
+
+                tarjetaDeCredito = await _context.TarjetaDeCredito.FindAsync(item.Id);
+                tarjetaDeCredito.Titular =item.Titular;
+                tarjetaDeCredito.NumeroDeTarjeta = item.NumeroDeTarjeta;
+                tarjetaDeCredito.FechaDeVencimiento = item.FechaDeVencimiento;
+                tarjetaDeCredito.Cvv =item.Cvv;
+                _context.TarjetaDeCredito.Update(tarjetaDeCredito);
                 await _context.SaveChangesAsync();
                 return Accepted();
             }

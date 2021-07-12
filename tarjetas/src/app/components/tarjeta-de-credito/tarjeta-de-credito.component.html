@@ -13,8 +13,9 @@
         <div class="col-lg 6">
             <div class="card">
                 <div class="card-body">
-                    <h5>Agregar tarjeta</h5>
+                    <h5>{{accion | uppercase}} TARJETA</h5>
                     <form [formGroup]="form" (ngSubmit)="agregarTarjeta()">
+                        <input type="hidden" formControlName="id" />
                         <div class="input-group input-group-lg mb-3">
                             <span class="input-group-text" id="basic-addon1">
                                 <i class="far fa-user" [class.green-icon]="this.form.get('titular')?.valid" [class.red-icon]="this.form.get('titular')?.invalid && this.form.get('titular')?.touched"></i>
@@ -69,7 +70,11 @@
                                 <td>{{tarjeta.numeroDeTarjeta}}</td>
                                 <td>{{tarjeta.fechaDeVencimiento}}</td>
                                 <td>{{tarjeta.cvv}}</td>
-                                <td><i class="far fa-edit text-warning"></i></td>
+                                <td>
+                                    <button (click)="editarTarjeta(tarjeta)" class="btn btn-default">
+                                        <i class="far fa-edit text-warning"></i>
+                                    </button>
+                                </td>
                                 <td>
                                     <button (click)="eliminarTarjeta(tarjeta.id)" class="btn btn-default"> 
                                         <i  class="fas fa-trash-alt text-danger"></i>
