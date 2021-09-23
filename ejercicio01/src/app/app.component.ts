@@ -44,4 +44,8 @@ export class AppComponent {
   title = 'ejercicio01';
   peliculasEnCines: any;
   peliculasProximosEstrenos: any;  
+
+  manejarRated(voto:number):void{
+    alert(voto);
+  }
 }
