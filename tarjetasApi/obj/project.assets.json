@@ -5980,24 +5980,30 @@
     ]
   },
   "packageFolders": {
-    "/home/vmartinez/.nuget/packages/": {}
+    "C:\\Users\\DACPTICS_Desarrollo\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/vmartinez/Documents/Angular/Angular/tarjetasApi/tarjetasApi.csproj",
+      "projectUniqueName": "C:\\Users\\DACPTICS_Desarrollo\\Documents\\Angular\\tarjetasApi\\tarjetasApi.csproj",
       "projectName": "tarjetasApi",
-      "projectPath": "/home/vmartinez/Documents/Angular/Angular/tarjetasApi/tarjetasApi.csproj",
-      "packagesPath": "/home/vmartinez/.nuget/packages/",
-      "outputPath": "/home/vmartinez/Documents/Angular/Angular/tarjetasApi/obj/",
+      "projectPath": "C:\\Users\\DACPTICS_Desarrollo\\Documents\\Angular\\tarjetasApi\\tarjetasApi.csproj",
+      "packagesPath": "C:\\Users\\DACPTICS_Desarrollo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\DACPTICS_Desarrollo\\Documents\\Angular\\tarjetasApi\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "/home/vmartinez/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\DACPTICS_Desarrollo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -6051,6 +6057,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.8, 5.0.8]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -6059,7 +6071,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.301/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.7.21379.14\\RuntimeIdentifierGraph.json"
       }
     }
   }

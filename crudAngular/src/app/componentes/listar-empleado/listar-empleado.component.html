@@ -13,19 +13,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td scope="row">1984</td>
-                    <td>Víktor</td>
-                    <td>ahal_tocob@hotmail.com</td>
+                <tr *ngFor="let item of Empleados; let index= index">
+                    <td>{{item.id}}</td>
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.correo}}</td>
                     <td>
-                        <a routerLink="/editar-empleado/1">Editar</a>| <a routerLink="/borrar-empleado/1">Borrar</a></td>
+                        <a routerLink="/editar-empleado/{{item.id}}" class="btn btn-warning text-white">Editar</a>
+                        <a (click)="borrar(item.id, index);" class="btn btn-danger">Borrar</a>
+                    </td>
                 </tr>
 
             </tbody>
-        </table>
-        
-    </div>
-    <div class="card-footer text-muted">
-        Footer
-    </div>
+        </table>        
+    </div>    
 </div>

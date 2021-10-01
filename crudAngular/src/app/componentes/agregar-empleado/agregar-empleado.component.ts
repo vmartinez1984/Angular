@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { CrudService } from 'src/app/servicio/crud.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-agregar-empleado',
@@ -10,7 +11,11 @@ import { CrudService } from 'src/app/servicio/crud.service';
 export class AgregarEmpleadoComponent implements OnInit {
   formularioDeEmpleados: FormGroup;
 
-  constructor(public formulario: FormBuilder, private crudService: CrudService) {
+  constructor(
+    public formulario: FormBuilder, 
+    private crudService: CrudService,
+    private router: Router
+  ) {
     this.formularioDeEmpleados = this.formulario.group({
       nombre:[''],
       correo:['']
@@ -24,7 +29,10 @@ export class AgregarEmpleadoComponent implements OnInit {
     //console.log("Me presionaste");
     console.log(this.formularioDeEmpleados.value); 
     this.crudService.AgregarEmpleado(this.formularioDeEmpleados.value).subscribe(
-      data=>{console.log("Datos registrados")},
+      data=>{
+        console.log("Datos registrados")
+        this.router.navigateByUrl("listar-empleado");
+      },
       error=>{ console.log("Chingo su madre"); console.log(error);}
     );
   }
