@@ -12,8 +12,10 @@ export class EditarEmpleadoComponent implements OnInit {
   formularioDeEmpleado: FormGroup;
   id: any;
 
-  constructor(private activateRoute:ActivatedRoute, 
-    private serviceEmpleados: CrudService, formulario: FormBuilder, 
+  constructor(
+    private activateRoute:ActivatedRoute, 
+    private serviceEmpleados: CrudService, 
+    formulario: FormBuilder, 
     private router:Router
   ) { 
     this.id = this.activateRoute.snapshot.paramMap.get('id');
