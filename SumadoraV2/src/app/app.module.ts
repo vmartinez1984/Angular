@@ -4,14 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PersonaComponent } from './persona/persona.component';
-import { FormularioPersonaComponent } from './formulario-persona/formulario-persona.component';
+import { FormularioComponent } from './formulario/formulario.component';
+import { ResultadoComponent } from './resultado/resultado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PersonaComponent,
-    FormularioPersonaComponent
+    FormularioComponent,
+    ResultadoComponent
   ],
   imports: [
     BrowserModule,

@@ -5,52 +5,7 @@
     </div>
   </div>
   <hr />
-
-  <div class="container">
-    <form class="row">
-      <div class="form-group col-md-2">
-        <label>Nombre</label>
-        <input
-          class="form-control"
-          type="text"
-          name="nombre"
-          id="nombre"
-          placeholder="Nombre"
-          [(ngModel)]="nombreInput"
-        />
-      </div>
-
-      <div class="form-group col-md-2">
-        <label>Apellido</label>
-        <input
-          class="form-control"
-          type="text"
-          name="apellido"
-          id="apellido"
-          placeholder="Apellido"
-          [(ngModel)]="apellidoInput"
-        />
-      </div>
-
-      <div class="form-group col-md-2">
-        <br/>    
-          <button
-            type="submit"
-            class="btn btn-primary"
-            (click)="agregarPersona()"
-          >
-            Agregar
-          </button>
-      </div>
-    </form>
-  </div>
-
+  <app-formulario-persona (personaCreada)="personaAgregada($event)"></app-formulario-persona>
   <hr/>
-  <div class="row">
-    <div class="col">
-      <div *ngFor="let persona of personas; let i = index">
-        {{ i + 1 }} {{ persona.nombre }} {{ persona.apellido }}
-      </div>
-    </div>
-  </div>
+  <app-persona *ngFor="let persona of personas; let index = index" [persona]="persona" [index]="index"></app-persona>  
 </div>
