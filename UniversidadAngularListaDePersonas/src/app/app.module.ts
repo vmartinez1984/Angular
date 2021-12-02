@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { PersonaComponent } from './persona/persona.component';
 import { FormularioPersonaComponent } from './formulario-persona/formulario-persona.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

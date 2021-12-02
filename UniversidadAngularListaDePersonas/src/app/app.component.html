@@ -5,7 +5,11 @@
     </div>
   </div>
   <hr />
-  <app-formulario-persona (personaCreada)="personaAgregada($event)"></app-formulario-persona>
-  <hr/>
-  <app-persona *ngFor="let persona of personas; let index = index" [persona]="persona" [index]="index"></app-persona>  
+  <app-formulario-persona></app-formulario-persona>
+  <hr />
+  <app-persona
+    *ngFor="let persona of personas; let index = index"
+    [persona]="persona"
+    [index]="index"
+  ></app-persona>
 </div>
