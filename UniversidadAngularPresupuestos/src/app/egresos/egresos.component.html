@@ -1,0 +1,19 @@
+<h3 class="text-primary">Egresos</h3>
+
+<div class="card">
+    <div class="card-body">
+        <div class="row mt-1" *ngFor="let item of lista; let index = index">
+            <div class="col-md-5">{{item.nombre}}</div>
+            <div class="col-md-5">
+                <div class="text-right">
+                    {{item.cantidad | currency}}
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-danger" (click)="eliminar(index)">
+                    X
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="text-center">
+  <h2 class="text-success">Presupuesto</h2>
+
+  <div class="card border-success">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">Ingreso</div>
+        <div class="col-md-6">{{ ingreso | currency }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card border-danger mt-3 mb-3">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">Egreso</div>
+        <div class="col-md-6">{{egreso | currency}}</div>
+      </div>
+    </div>
+  </div>
+</div>
