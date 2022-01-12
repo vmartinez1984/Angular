@@ -13,7 +13,14 @@ export class PersonasComponent implements OnInit {
   constructor(private router: Router, private service : PersonasService) { }
 
   ngOnInit(): void {
-    this.personas = this.service.personas;
+    this.service.cargarPersonas()
+    .subscribe(
+      (personas :Persona[])=>{
+        this.personas = personas;
+        this.service.colocarPersonas(personas);
+        console.log(this.personas);
+      }
+    );
   }
 
   agregar(){
